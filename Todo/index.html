@@ -44,6 +44,34 @@
                   @click="toggleIsDone(item.id)"
                 >DONE</button>
                 <button
+                  class="list-button button-stock"
+                  @click="toggleIsStock(item.id)"
+                >STOCK</button>
+                <button
+                  class="list-button button-delete"
+                  @click="deleteTodo(item.id)"
+                >DELETE</button>
+              </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="area-stock">
+            <p class="todo-title">stock items</p>
+            <ul class="todo-area">
+              <!-- todosをリストレンダリング -->
+              <li
+                v-for="(item,i) in stockTodo"
+                :key="i"
+                class="list"
+              >
+              <span class="list-label">{{ item.text }}</span>
+              <span class="button-area">
+                <button
+                  class="list-button"
+                  @click="toggleIsStock(item.id)"
+                >RETURN</button>
+                <button
                   class="list-button button-delete"
                   @click="deleteTodo(item.id)"
                 >DELETE</button>
